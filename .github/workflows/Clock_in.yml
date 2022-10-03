@@ -1,26 +1,22 @@
-name: Clock_in
+name: clock-in
 
 on:
   schedule:
-    - cron: '15 11 * * *'
+    - cron: '30 11 * * *'
 
   workflow_dispatch:
 
 jobs:
   Clock_in:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
-      - name: Check out this repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.9.13'
 
-      - name: Install packages 
-        run: pip3 install -r requirements.txt
+      - run: pip3 install -r requirements.txt
 
-      - name: Run the script
-        run: python clockIn_gzhu.py
+      - run: python clock_in.py

@@ -185,9 +185,9 @@ class clockIn():
                 sys.exit()
         else:
             if self.fail:
-                title = content = "健康打卡失败"
+                title = content = "卢拉列成功"
             else:
-                title = content = "健康打卡成功"
+                title = content = "卢拉列失败"
 
             logger.info("推送打卡成功与否的消息")
 

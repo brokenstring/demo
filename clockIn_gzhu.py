@@ -12,7 +12,7 @@ from selenium.webdriver.support.relative_locator import locate_with
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-class clockIn():
+class ClockIn:
 
     def __init__(self):
         self.xuhao = "32106100117"
@@ -21,9 +21,14 @@ class clockIn():
 
         options = Options()
         optionsList = [
-            "--headless", "--enable-javascript", "start-maximized",
-            "--disable-gpu", "--disable-extensions", "--no-sandbox",
-            "--disable-browser-side-navigation", "--disable-dev-shm-usage"
+            "--headless",
+            "--enable-javascript",
+            "start-maximized",
+            "--disable-gpu",
+            "--disable-extensions",
+            "--no-sandbox",
+            "--disable-browser-side-navigation",
+            "--disable-dev-shm-usage"
         ]
 
         for option in optionsList:
@@ -194,9 +199,9 @@ class clockIn():
         if self.pushplus:
             data = {"token": self.pushplus, "title": title, "content": content}
             url = "http://www.pushplus.plus/send/"
-            logger.info(requests.post(url, data=data).text)
+            logger.info(requests.post(url, data=data,timeout=10).text)
 
 
 if __name__ == "__main__":
-    cl = clockIn()
+    cl = ClockIn()
     cl()

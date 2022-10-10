@@ -18,5 +18,9 @@ jobs:
           python-version: '3.9.13'
 
       - run: pip3 install -r requirements.txt
-
-      - run: python clockIn_gzhu.py
+      
+      - env:
+          ID: ${{ secrets.ID }}
+          PW: ${{ secrets.PW }}
+          PP: ${{ secrets.PP }}
+        run: python clockIn_gzhu.py

@@ -15,9 +15,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 class ClockIn:
 
     def __init__(self):
-        self.xuhao = "32106100117"
-        self.mima = "Aa18319093951!"
-        self.pushplus = "da9840d244194425bb1d1435fcd662da"
+        self.xuhao = str(os.environ["ID"])
+        self.mima = str(os.environ["PW"])
+        self.pushplus = str(os.environ["PP"])
 
         options = Options()
         optionsList = [

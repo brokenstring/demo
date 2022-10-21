@@ -34,7 +34,7 @@ class ClockIn:
         for option in optionsList:
             options.add_argument(option)
 
-        options.page_load_strategy = 'eager'
+        options.page_load_strategy = 'none'
         options.add_experimental_option(
             "excludeSwitches",
             ["ignore-certificate-errors", "enable-automation"])

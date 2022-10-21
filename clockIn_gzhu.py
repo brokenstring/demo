@@ -240,10 +240,10 @@ login?service=https%3A%2F%2Fnewmy.gzhu.edu.cn%2Fup%2Fview%3Fm%3Dup"
                 sys.exit()
         else:
             if self.fail:
-                title = content = "健康打卡失败"
+                title = content = "第二次失败"
                 logger.info("推送健康打卡失败的消息")
             else:
-                title = content = "健康打卡成功"
+                title = content = "第二次成功"
                 logger.info("推送健康打卡成功的消息")
 
         if self.pushplus:
